@@ -12,14 +12,19 @@ export const RightBoard = () => {
 
     const { user, isAuthenticated } = useAuth();
     const { openModal } = useModal();
-    if (!user) return null;
-    const { id, backgroundColor, imageUrl } = user || {};
     const [ joinedTeamId, setJoinedTeamId ] = useState<string | null>(null);
 
 
     const [teams, setTeams] = useState(teamsGroups);
 
     const handleToggle = (teamId: string) => {
+        
+        if (!user) {
+            openModal();
+            return;
+        }
+
+        const { id, backgroundColor, imageUrl } = user;
 
         if (joinedTeamId === teamId) {
             // User go out

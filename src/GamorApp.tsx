@@ -2,9 +2,9 @@ import { AuthProvider } from './context/AuthContext';
 import { DarkModeProvider } from './context/DarkModeContext';
 import { ModalProvider } from './context/ModalContext';
 import {
-  // Navbar,
-  // MainBoard,
-  // TrendingCategories,
+  Navbar,
+  MainBoard,
+  TrendingCategories,
   ToggleButton,
   ModalLogin
 } from './components';
@@ -18,9 +18,9 @@ function GamorApp() {
       <DarkModeProvider>
         <AuthProvider>
           <ModalProvider>
-            {/* <Navbar />
+            <Navbar />
             <MainBoard />
-            <TrendingCategories /> */}
+            <TrendingCategories />
             <ToggleButton />
             <ModalLogin />
           </ModalProvider>
