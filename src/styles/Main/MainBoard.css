@@ -1,0 +1,98 @@
+/* Main Board Container */
+.main-board {
+  display: flex;
+  max-width: 1200px;
+  height: 600px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+ 
+/* Dark Mode */
+body.dark-mode .main-board {
+  background-color: var(--dark-principal-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .7);
+}
+
+body.dark-mode .welcome-panel,
+body.dark-mode .selection-panel {
+  background-color: var(--dark-principal-color);;
+}
+
+body.dark-mode .game-search {
+  background-color: var(--dark-secondary-color);;
+}
+
+body.dark-mode .platform-options {
+  background-color: var(--dark-secondary-color);
+}
+
+body.dark-mode .platform-btn.active {
+  background-color: var(--dark-color-btn);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .text-without-color {
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .underlined::after {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 100 10' xmlns='http://www.w3.org/2000/svg'><path d='M0,10 Q50,0 100,10' fill='none' stroke='%23ff6d38' stroke-width='2'/></svg>");
+}
+
+body.dark-mode .btn-create,
+body.dark-mode .btn-signin {
+  background-color: var(--dark-secondary-color);
+  color: var(--dark-text-color);
+  border: 1px solid var(--dark-color-btn-hover);
+}
+
+body.dark-mode .search-btn {
+  background-color: var(--dark-color-btn);
+}
+
+body.dark-mode .search-btn:hover {
+  background-color: var(--dark-color-btn-hover);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1100px) {
+  .main-board {
+    flex-direction: column;
+    
+    height: auto;
+    max-width: 600px;
+  }
+
+  .welcome-panel,
+  .featured-panel,
+  .selection-panel {
+    flex-wrap: wrap;
+    align-content: center;
+    width: 100%;
+    padding: 30px;
+  }
+
+  .character-image {
+    position: relative;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .welcome-title {
+    font-size: 36px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .platform-options {
+    flex-wrap: wrap;
+  }
+}
+  

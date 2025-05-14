@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Open Sans Condensed';
+  src: url('/src/assets/fonts/OpenSans_Condensed-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --principal-color: #8465f2;
+  --principal-color-darker: #5e3bb0;
+  --secondary-color: #fe7530;
+  --secondary-color-darker: #d66329;
+  --dark-principal-color: #1e1e1e;
+  --dark-secondary-color: #2c2c2c;
+  --dark-color-btn: #333;
+  --dark-color-btn-hover: #444;
+  --dark-text-color: white;
+  --left-circle-hover: .7vw;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans Condensed', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: var(--dark-color-btn);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* To hide, block and animate some elements */
+.opacity-0 {
+  opacity: 0;
+}
+
+.disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-blocked {
+  opacity: .5;
+  cursor: default;
+}
+
+.btn-blocked:hover {
+  background-color: #f0f0f0;;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --principal-color: #fe7530;
+  --principal-color-darker: #1e1e1e;
+  --secondary-color: #8465f2;
+  background-color: #121212;
+  color: var(--dark-text-color);
+}
+
+@media (max-width: 450px) {
+  body {
+    width: 115vw;
+  }
+}

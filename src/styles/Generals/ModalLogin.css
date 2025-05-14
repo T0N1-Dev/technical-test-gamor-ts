@@ -1,0 +1,385 @@
+/* Button styles */
+.login-button {
+  background-color: var(--principal-color);
+  color: var(--dark-text-color);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-button:hover {
+  background-color: var(--principal-color-darker);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: var(--dark-text-color);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease-out;
+  overflow: hidden;
+}
+
+/* Modal header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  color: var(--dark-color-btn);
+  font-weight: 600;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  color: var(--dark-color-btn);
+  background-color: #f5f5f5;
+}
+
+/* Login form */
+.login-form {
+  padding: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--principal-color);
+  box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
+  outline: none;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+/* Form options */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 8px;
+}
+
+.forgot-password {
+  color: var(--principal-color);
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--principal-color);
+  color: var(--dark-text-color);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 16px;
+}
+
+.submit-button:hover {
+  background-color: var(--principal-color-darker);
+}
+
+/* Sign up link */
+.signup-link {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.signup-link a {
+  color: var(--principal-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .modal-content {
+    width: 95%;
+  }
+
+  .form-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+/* Social Login */
+.social-login {
+  margin-bottom: 16px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #999;
+  font-size: 14px;
+}
+
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--dark-text-color);
+  color: var(--dark-color-btn-hover);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.google-login-button:hover {
+  background-color: #f8f8f8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.google-login-button svg {
+  margin-right: 10px;
+}
+
+/* Password field with toggle button */
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px; /* Make room for the button */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.password-toggle-btn:hover {
+  color: #555;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.password-toggle-btn:focus {
+  outline: none;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .modal-content {
+  background-color: var(--dark-principal-color);
+  color: var(--dark-text-color);
+}
+
+body.dark-mode .modal-header {
+  border-bottom-color: var(--dark-color-btn);
+}
+
+body.dark-mode .modal-header h2 {
+  color: #fff;
+}
+
+body.dark-mode .close-button {
+  color: #aaa;
+}
+
+body.dark-mode .close-button:hover {
+  color: #fff;
+  background-color: var(--dark-color-btn);
+}
+
+body.dark-mode .form-group label {
+  color: #ccc;
+}
+
+body.dark-mode .form-group input {
+  background-color: #2d2d2d;
+  border-color: var(--dark-color-btn-hover);
+  color: #fff;
+}
+
+body.dark-mode .form-group input:focus {
+  border-color: var(--principal-color);
+  box-shadow: 0 0 0 3px rgba(247, 171, 90, 0.25);
+}
+
+body.dark-mode .form-group input::placeholder {
+  color: #777;
+}
+
+body.dark-mode .remember-me {
+  color: #ccc;
+}
+
+body.dark-mode .signup-link {
+  color: #aaa;
+}
+
+/* Modal overlay in dark mode */
+body.dark-mode .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+/* Dark mode social login */
+body.dark-mode .divider::before,
+body.dark-mode .divider::after {
+  border-bottom-color: var(--dark-color-btn-hover);
+}
+
+body.dark-mode .divider span {
+  color: #aaa;
+}
+
+body.dark-mode .google-login-button {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-color: var(--dark-color-btn-hover);
+}
+
+body.dark-mode .google-login-button:hover {
+  background-color: var(--dark-color-btn);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
