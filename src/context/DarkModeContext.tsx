@@ -44,7 +44,7 @@ export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
 export const useDarkMode = () => {
     const context = useContext(DarkModeContext);
     if (context === undefined) {
-        throw new Error("useDarkMode must be used withing an AuthProvider");
+        throw new Error("useDarkMode must be used withing an DarkModeProvider");
     }
     return context;
 };

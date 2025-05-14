@@ -33,4 +33,10 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
   );
 };
 
-export const useModal = () => useContext(ModalContext);
+export const useModal = () => {
+  const context = useContext(ModalContext);
+  if (context === undefined) {
+    throw new Error("useModal must be used withing an ModalProvider");
+  }
+  return context;
+};

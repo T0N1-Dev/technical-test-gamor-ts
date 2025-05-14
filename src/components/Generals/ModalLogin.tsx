@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import type { FormEvent, MouseEvent, KeyboardEvent } from "react";
 import { useModal } from "../../context/ModalContext"
 import { useAuth } from "../../context/AuthContext";
 import "../../styles/Generals/ModalLogin.css"
@@ -10,23 +11,25 @@ export const ModalLogin = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    login(email)
-    closeModal()
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    login(email);
+    closeModal();
   }
 
-  const handleOverlayClick = (e) => {
-    if (e.target.className === "modal-overlay") {
-      closeModal()
+  const handleOverlayClick = (e: MouseEvent<HTMLDivElement>) => {
+    if ((e.target as HTMLElement).className === "modal-overlay") {
+      closeModal();
     }
   }
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Escape") {
-      closeModal()
+      closeModal();
     }
   }
+
+  if(!isModalOpen) return null;
 
   return (
     <div className="modal-login-container">
@@ -70,7 +73,7 @@ export const ModalLogin = () => {
                     className="password-toggle-btn"
                     onClick={() => setShowPassword(!showPassword)}
                     aria-label={showPassword ? "Hide password" : "Show password"}
-                    tabIndex="-1"
+                    tabIndex={-1}
                   >
                     {showPassword ? (
                       <svg
