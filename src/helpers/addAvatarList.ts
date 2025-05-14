@@ -1,7 +1,7 @@
 import type { Team, Member } from '../data/teamsGroups';
 
 export const addAvatarList = (
-    id: number,
+    id: string,
     newMember: Member,
     list: Team[]
 ): Team[] => {

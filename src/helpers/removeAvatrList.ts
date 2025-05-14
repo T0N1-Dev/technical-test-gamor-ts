@@ -1,7 +1,7 @@
 import type { Team, Member } from '../data/teamsGroups';
 
 export const removeAvatarList = (
-    id: number, 
+    id: string, 
     user: Member, 
     list: Team[]
 ): Team[] => {
